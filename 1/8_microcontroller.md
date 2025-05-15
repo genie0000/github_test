@@ -33,7 +33,7 @@
  - **인터럽트**: 외부 신호가 발생하면 즉시 중단하고 특정 동작을 수행한다.(예: 버튼이 눌리면 즉시 반응)
 
  - **타이머/카운터**: 주기적인 작업 수행 또는 시간을 측정한다.(예: 1초마다 LED깜빡임)
- 
+
 ### 2-2. 인터페이스 종류
 1. **디지털 핀(Digital I/O)**
      - HIGH(1, 보통 3.3V이거나 5V), LOW(0, 0V)신호만 처리한다.  
@@ -60,8 +60,10 @@
  - **여러 장치를 연결하는 것이 가능** 하다.(주소 체계로 구분)
  - 사용 예: 여러 센서를 하나의 버스로 연결하는 경우(OLED 디스플레이)
 ### 3-3. SPI (Serial Peripheral Interface)
- - **MOSI(Master Out Slave In)**: 마스터 --> 슬레이브, **MISO(Master In Slave Out)**: 슬레이브 --> 마스터,  
- **SCLK(Serial Clock)**: 클럭 신호, **SS/CS(Slave Select/Chip Select)**: 장치 선택
+ - **MOSI(Master Out Slave In)**: 마스터 --> 슬레이브  
+ **MISO(Master In Slave Out)**: 슬레이브 --> 마스터  
+ **SCLK(Serial Clock)**: 클럭 신호  
+ **SS/CS(Slave Select/Chip Select)**: 장치 선택  
 
  - **고속, 4선식 동기식 직렬 통신**
  - **여러 장치를 연결하는 것이 가능** 하다.(SS로 식별)
