@@ -172,14 +172,15 @@
 
     - **~/.gitconfig**: Git 사용자 설정 저장 (전역 설정)
 
-# chrome, VScode 설치 및 실행
-## 1. chrome 브라우저 설치
+#  Chrome, VS code 설치 및 Python 파일 실행
+## 1. chrome, VScode 설치 및 실행
+### 1-1. chrome 브라우저 설치
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  
 sudo apt install ./google-chrome-stable_current_amd64.deb -y  
 
 google-chrome # chrome 창 실행
 
-## 2. VScode 설치
+### 1-2. VScode 설치
 sudo apt install software-properties-common apt-transport-https -y  
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -  
 sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"  
@@ -188,27 +189,27 @@ sudo apt install code -y
 
 code # 설치된 VS code 실행
 
-# ~/study/linux 디렉토리에 간단한 파이썬 프로그램을 작성 및 실행
-### 디렉토리 생성
+## 2. ~/study/linux 디렉토리에 간단한 파이썬 프로그램을 작성 및 실행
+### 2-1. 디렉토리 생성
 **mkdir -p ~/study/linux**  
-### VS code로 파일 열기
+### 2-2. VS code로 파일 열기
 **code /home/genie/study/linux/1_hello.py**  
-### 터미널에서 Python파일 실행
+### 2-3. 터미널에서 Python파일 실행
 **python3 ~/study/linux/1_hello.py**  
      - 출력: Permission denied: 관리자 권한이 필요합니다.
      - **/test는 리눅스 루트 디렉토리 언어**이기 때문에 일반 사용자로는 사용할 수 없다.
-### sudo로 실행하여 권한 문제를 해결하여 예외 없이 실행되도록 한다.
+### 2-4. sudo로 실행하여 권한 문제를 해결하여 예외 없이 실행되도록 한다.
 **sudo python3 ~/study/linux/1_hello.py**  
      - 출력: [sudo] password for genie: 
      - 출력: 파일 생성 완료!
-### 파일 내용 확인
+### 2-5. 파일 내용 확인
 **ls -l /test  # 파일 존재 확인**   
      - 출력: total 4  
      - 출력: -rw-r--r-- 1 root root 11  5월 19 21:22 hello.txt  
 **cat /test/hello.txt  # 파일 내용 확인**   
      - 출력: Hello Linux
 
-## 질문
+## 3. 질문
 ### 확인하기 쉬운 홈 디렉토리가 아니라 루트 디렉토리 아래에 /test같은 디렉토리를 만드는 이유가 뭔지 알고싶다.
  - **ls -/, ls -l /, ls -la /**를 사용하여 루트 디렉토리 아래에 있는 파일도 확인 가능하다.
  - 시스템 전체 공유 필요
