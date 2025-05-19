@@ -186,7 +186,29 @@ sudo apt install code -y
 
 
 # ~/study/linux 디렉토리에 간단한 파이썬 프로그램을 작성 및 실행
-mkdir -p ~/study/linux
+### 디렉토리 생성
+mkdir -p ~/study/linux  
+### VS code로 파일 열기
+code /home/genie/study/linux/1_hello.py  
+### 터미널에서 Python파일 실행
+python3 ~/study/linux/1_hello.py  
+     - 출력: Permission denied: 관리자 권한이 필요합니다.
+     - /test는 리눅스 루트 디렉토리 언어이기 때문에 일반 사용자로는 사용할 수 없다.
+### sudo로 실행하여 권한 문제를 해결하여 예외 없이 실행되도록 한다.
+sudo python3 ~/study/linux/1_hello.py  
+     - 출력: [sudo] password for genie: 
+     - 출력: 파일 생성 완료!
+### 파일 내용 확인
+ls -l /test  # 파일 존재 확인   
+     - 출력: total 4  
+     - 출력: -rw-r--r-- 1 root root 11  5월 19 21:22 hello.txt  
+cat /test/hello.txt  # 파일 내용 확인   
+     - 출력: Hello Linux
 
-code ~/study/linux/create_file.py
-python3 ~/study/linux/create_file.py
+## 질문
+### 확인하기 쉬운 홈 디렉토리가 아니라 루트 디렉토리 아래에 /test같은 디렉토리를 만드는 이유가 뭔지 알고싶다.
+ - ls -/, ls -l /, ls -la /를 사용하여 루트 디렉토리 아래에 있는 파일도 확인 가능하다.
+ - 시스템 전체 공유 필요
+     - 사용자 계정과 무관하게 접근 가능한 디렉토리가 필요할 때
+ - 홈 디렉토리 보호
+     - 사용자 파일과 분리해서 실험하고 싶을 때
