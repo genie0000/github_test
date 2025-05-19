@@ -4,7 +4,7 @@
 # ROS2 학습을 위한 리눅스 운영체제 사용법 학습
 ## 1.셀 환경이 실행되는 터미널 실행 방법
  - 터미널(Terminal)은 리눅스에서 명령어를 입력하는 창이고, 셸(Shell)은 이 터미널에서 동작하는 프로그램이다.
- - 우분투에서 단축키 [Ctrl+Alt+T]를 사용하여 터미널을 실행할 수 있다.
+ - 우분투에서 **단축키 [Ctrl+Alt+T]를 사용하여 터미널을 실행**할 수 있다.
 
 ## 2.파일과 디렉토리를 관리하는데 필요한 명령어
  - **pwd**: 현재 디렉토리 경로 표시
@@ -98,7 +98,7 @@
 ### 6-1. 사용자와 권한의 개념
  - 리눅스에서 모든 파일과 프로세스는 소유자가 있다.
      - 각각의 파일은 소유자, 그룹, 기타 사용자로 나뉜다.
-     - 각 사용자에 대해 읽기(r), 쓰기(w), 실행(x) 권한이 따로 설졍된다.
+     - 각 사용자에 대해 **읽기(r), 쓰기(w), 실행(x) 권한**이 따로 설졍된다.
 
 ### 6-2. 일반 사용자, 슈퍼유저(root)
  - 일반 사용자는 시스템의 파일 수정, 패키지 설치, 서비스 제어등이 제한된다.
@@ -121,7 +121,7 @@
      - 설치, 업데이트, 삭제, 의존성 관리 등을 자동으로 해주는 툴
      - 우분투는 APT(Advanced Package Tool)로 소프트웨어를 관리한다.
 ### 7-2. APT
- - apt는 우분투에서 패키지를 설치/삭제/업데이트할 수 있는 명령어이다.
+ - **apt는 우분투에서 패키지를 설치/삭제/업데이트할 수 있는 명령어**이다.
  - 내부적으로는 /etc/apt/sources.list 파일에 명시된 저장소(repository) 에서 패키지를 받아온다.
  - **sudo apt update**: 저장소에서 최신 패키지 목록을 가져온다.
 
@@ -177,6 +177,8 @@
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb  
 sudo apt install ./google-chrome-stable_current_amd64.deb -y  
 
+google-chrome # chrome 창 실행
+
 ## 2. VScode 설치
 sudo apt install software-properties-common apt-transport-https -y  
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -  
@@ -184,30 +186,31 @@ sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/v
 sudo apt update  
 sudo apt install code -y  
 
+code # 설치된 VS code 실행
 
 # ~/study/linux 디렉토리에 간단한 파이썬 프로그램을 작성 및 실행
 ### 디렉토리 생성
-mkdir -p ~/study/linux  
+**mkdir -p ~/study/linux**  
 ### VS code로 파일 열기
-code /home/genie/study/linux/1_hello.py  
+**code /home/genie/study/linux/1_hello.py**  
 ### 터미널에서 Python파일 실행
-python3 ~/study/linux/1_hello.py  
+**python3 ~/study/linux/1_hello.py**  
      - 출력: Permission denied: 관리자 권한이 필요합니다.
-     - /test는 리눅스 루트 디렉토리 언어이기 때문에 일반 사용자로는 사용할 수 없다.
+     - **/test는 리눅스 루트 디렉토리 언어**이기 때문에 일반 사용자로는 사용할 수 없다.
 ### sudo로 실행하여 권한 문제를 해결하여 예외 없이 실행되도록 한다.
-sudo python3 ~/study/linux/1_hello.py  
+**sudo python3 ~/study/linux/1_hello.py**  
      - 출력: [sudo] password for genie: 
      - 출력: 파일 생성 완료!
 ### 파일 내용 확인
-ls -l /test  # 파일 존재 확인   
+**ls -l /test  # 파일 존재 확인**   
      - 출력: total 4  
      - 출력: -rw-r--r-- 1 root root 11  5월 19 21:22 hello.txt  
-cat /test/hello.txt  # 파일 내용 확인   
+**cat /test/hello.txt  # 파일 내용 확인**   
      - 출력: Hello Linux
 
 ## 질문
 ### 확인하기 쉬운 홈 디렉토리가 아니라 루트 디렉토리 아래에 /test같은 디렉토리를 만드는 이유가 뭔지 알고싶다.
- - ls -/, ls -l /, ls -la /를 사용하여 루트 디렉토리 아래에 있는 파일도 확인 가능하다.
+ - **ls -/, ls -l /, ls -la /**를 사용하여 루트 디렉토리 아래에 있는 파일도 확인 가능하다.
  - 시스템 전체 공유 필요
      - 사용자 계정과 무관하게 접근 가능한 디렉토리가 필요할 때
  - 홈 디렉토리 보호
