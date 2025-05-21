@@ -38,29 +38,58 @@ ros2 run 명령의 사용법을 학습한다.
      - 실시간성 확보가 가능하다.
      - UART등으로 제한적으로 정보를 확인할 수 있다.
 
-## 3. 우분투 리눅스에 ROS2를 설치하는 방법 조사
+## 3. 우분투 리눅스에 ROS2를 설치하는 방법 조사 및 humble 배포폰 설치
+ - https://docs.ros.org/en/humble/ # humble 공식 홈페이지에서 설치 진행
+ - Set locale
+     - locale
+     - sudo apt update && sudo apt install locales
+     - sudo locale-gen en_US en_US.UTF-8
+     - sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
+     - export LANG=en_US.UTF-8
+     - locale  # verify settings
+ - Setup Sources
+     - sudo apt install software-properties-common
+     - sudo add-apt-repository universe
+     - sudo apt update && sudo apt install curl -y
+     - sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+     - echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+ - 설치 확인
+     - ls /etc/apt/sources.list.d/  # ros2.list가 있는 것을 확인할 수 있다.
+ - Install ROS 2 packages
+     - sudo apt update
+     - sudo apt upgrade
+     - sudo apt install ros-humble-desktop
+ - 설치 확인
+     - ls /opt/ros/humble/
+
+## 4. ROS2로 동작하는 제어 프로그램에서 패키지와 노드의 관계
+ - 패키지는 하나 이상의 노드를 포함할 수 있다.
+ - 노드는 반드시 패키지 안에 있어야 ROS2가 인식하고 실행할 수 있다.
+### 4-1. 패키지(Package)
+ - ROS2에서 기능 단위로 코드를 묶는 기본 단위
+ - 라이브러리, 노드, 메시지, launch 파일 등 포함
+### 4-2. 노드(Node)
+ - 패키지 안에 있는 실행 가능한 프로그램(프로세스)
+ - 센서 데이터 읽기, 제어 명령 전송 등의 역할 수행
+
+## 5. ros2 run 명령의 사용법
+ - ros2 run 명령은 ROS2 패키지 안의 실행 가능한 노드를 실행할 때 사용하는 명령어이다.
+ - ros2 run (패키지 이름) (실행파일 이름)
+
+## 6. 두 개의 터미널을 실행하고, 각각의 터미널에서 두 개의 데모 프로그램을 동시에 실행
+### ROS2를 사용하려면 터미널을 열 때마다 아래 명령을 실행해야 한다.
+ - source /opt/ros/humble/setup.bash
+### 6-1. demo_nodes_cpp 패키지의 talker 노드 실행
+ - ros2 run demo_nodes_cpp talker
+### 6-2. demo_nodes_cpp 패키지의 listener 노드 실행
+ - ros2 run demo_nodes_cpp listener
+
+### 6-3. 두 개의 노드는 동시에 실행되고, 서로 상호작용하는지 확인
+
+### 6-4. 이를 실행하기 위해서 환경 설정과 관련된 어떤 추가 작업이 필요한지 확인한다. 이 과정을 거쳐 두 개의 데모 프로그램을 실행한 후, 프로그램의 결과를 확인한다.
 
 
-## 4. 우분투 리눅스에 ROS2의 humble 배포본을 설치
+### 6-5. 데모 프로그램의 실행 화면을 캡쳐해 이미지 파일로 저장한다. 동시에 실행되어 상호작용하고 있는 상황을 확인할 수 있는 이미지를 저장해야 한다.
 
-
-## 5. ROS2로 동작하는 제어 프로그램에서 패키지와 노드의 관계 조사
-
-## 6. ros2 run명령의 사용법에 대해 조사
-
-## 7. 두 개의 터미널을 실행하고, 각각의 터미널에서 두 개의 데모 프로그램을 동시에 실행
-### 터미네이터 설치(창 분활을 쉽게할 수 있다.)
-sudo apt update
-sudo apt install terminator
-
-### 7-1. demo_nodes_cpp 패키지의 talker 노드
-
-### 7-2. demo_nodes_cpp 패키지의 listener 노드
-
-### 7-3. 두 개의 노드는 동시에 실행되고, 서로 상호작용하는지 확인
-
-### 7-4. 이를 실행하기 위해서 환경 설정과 관련된 어떤 추가 작업이 필요한지 확인한다. 이 과정을 거쳐 두 개의 데모 프로그램을 실행한 후, 프로그램의 결과를 확인한다.
-
-### 7-5. 데모 프로그램의 실행 화면을 캡쳐해 이미지 파일로 저장한다. 동시에 실행되어 상호작용하고 있는 상황을 확인할 수 있는 이미지를 저장해야 한다.
 
 
