@@ -38,7 +38,7 @@ ROS2의 노드의 개념에 대해서 학습한다.
 <img src="3_3_screen_capture.png" alt="demo image" width="700"/>
 
 ## 4. 각각의 터미널에서 turtlesim 패키지의 turtlesim_node와 turtle_teleop_key 두 개의 노드를 각각 실행해보고, 두 노드 간 관계를 학습 및 이미지 파일 저장
- - turtle_teleop_key 노드를 실행하면, 실행할 때의 설명에 따라 키를 입력해 turtlesim_node 노드를 실행해 생성된 로봇을 움직일 수 있다.
+ - turtle_teleop_key 노드를 실행하면, 키보드 방향키를 사용해 turtlesim_node 노드를 실행해 생성된 거북이를 움직일 수 있다.
 
  - **turtlesim_node 실행**
      - source /opt/ros/humble/setup.bash
@@ -49,5 +49,10 @@ ROS2의 노드의 개념에 대해서 학습한다.
      - ros2 run turtlesim turtle_teleop_key 
 
 <img src="3_4_screen_capture.png" alt="demo image" width="700"/>
+
+ - **teleop_turtle은 Publisher, turtlesim는 Subscriber**이다.
+
+<img src="3_5_screen_capture.png" alt="demo image" width="700"/>
+
 
 
