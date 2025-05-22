@@ -123,17 +123,12 @@ ROS2 패키지 및 파이썬 빌드 시스템에 대해 학습한다.
      - **install_requires**: 설치 시 필요한 Python 패키지 (ex. setuptools)
      - **entry_points**: ROS2 run으로 실행 가능한 노드 정의 (ros2 run my_robot_controller controller_node)
 
+## 8. 워크스페이스 및 패키지를 생성한 후의 워크스페이스 디렉토리에서 tree 프로그램을 실행해보고, 실행 결과는 4_ros2_ws_tree.txt이름으로 저장한다.
+ - cd ros2_ws/
+ - tree > ~/github_test/2/4/4_ros2_ws_tree.txt
 
-
-워크스페이스 및 패키지를 생성한 후의 워크스페이스 디렉토리에서 tree 프로그램을 실행해보자. 실행 결과는 조사 문서에 기록한다.
-cd ros2_ws/
-tree > ~/github_test/2/4/ros2_ws_tree.txt
-
-
-워크 스페이스 디렉토리에서 src 디렉토리를 압축해 함께 게시한다.
-워크스페이스 디렉토리를 압축 한 파일도 함께 게시한다.
-
-cd ~/ros2_ws  # 워크스페이스로 이동
-zip -r src.zip src/  # src.zip파일이 생성된다.
-mv src.zip ~/github_test/2/4/  # 압축된 src.zip파일을 github_test/2/4/로 이동한다.
+## 9. 워크 스페이스 디렉토리에서 src 디렉토리를 압축해 4_src.zip이름으로 저장한다.
+ - cd ~/ros2_ws  # 워크스페이스로 이동
+ - zip -r src.zip src/  # src.zip파일이 생성된다.
+ - mv src.zip ~/github_test/2/4/  # 압축된 src.zip파일을 github_test/2/4/로 이동한다.
 
