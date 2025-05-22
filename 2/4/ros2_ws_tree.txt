@@ -1,0 +1,37 @@
+.
+├── build
+│   └── COLCON_IGNORE
+├── install
+│   ├── COLCON_IGNORE
+│   ├── local_setup.bash
+│   ├── local_setup.ps1
+│   ├── local_setup.sh
+│   ├── _local_setup_util_ps1.py
+│   ├── _local_setup_util_sh.py
+│   ├── local_setup.zsh
+│   ├── setup.bash
+│   ├── setup.ps1
+│   ├── setup.sh
+│   └── setup.zsh
+├── log
+│   ├── build_2025-05-22_18-33-41
+│   │   ├── events.log
+│   │   └── logger_all.log
+│   ├── COLCON_IGNORE
+│   ├── latest -> latest_build
+│   └── latest_build -> build_2025-05-22_18-33-41
+└── src
+    └── my_robot_controller
+        ├── my_robot_controller
+        │   └── __init__.py
+        ├── package.xml
+        ├── resource
+        │   └── my_robot_controller
+        ├── setup.cfg
+        ├── setup.py
+        └── test
+            ├── test_copyright.py
+            ├── test_flake8.py
+            └── test_pep257.py
+
+11 directories, 23 files
