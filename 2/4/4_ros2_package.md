@@ -68,6 +68,7 @@ ROS2 패키지 및 파이썬 빌드 시스템에 대해 학습한다.
      - **--dependencies rclpy**: ROS2의 Python 클라이언트 라이브러리인 rclpy를 의존성으로 등록
 
 ### 5-4. rclpy가 무엇이며 어떤 용도로 사용되는 파이썬 패키지인지를 조사해보자.
+ - https://docs.ros2.org/foxy/api/rclpy/api/node.html 참고
  - rclpy는 ROS2의 Python용 클라이언트 라이브러리이다.
  - rclcpp는 C++용, rclpy는 Python용이라고 생각하면 된다.
  - 주요 기능
