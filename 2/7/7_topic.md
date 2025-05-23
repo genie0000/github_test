@@ -99,19 +99,19 @@ ROS2의 토픽에 대해 학습한다.
  - ros2 run turtlesim turtlesim_node  # ros2 환경을 실행하고 거북이1 생성
  - ros2 run turtlesim turtlesim_node  # 새 터미널에서 ros2 환경을 실행하고 거북이2 생성
  - ros2 run turtlesim turtle_teleop_key
- - ros2 topic list
+ - **ros2 topic list**
      - **현재 활성화된 모든 토픽 목록을 출력**
      - /parameter_events
      - /rosout
-     - /turtle1/cmd_vel
+     - **/turtle1/cmd_vel**
      - /turtle1/color_sensor
      - /turtle1/pose
- - ros2 topic info /turtle1/cmd_vel
+ - **ros2 topic info /turtle1/cmd_vel**
      - **지정한 토픽에 대한 정보(Type, Publisher, Subscription count)를 출력**
      - Type: geometry_msgs/msg/Twist  # 선속도 + 각속도값을 얻을 수 있다.
-     - Publisher count: 1  # turtle_teleop_key 하나에서 발행하는 것을 알 수 있다.
-     - Subscription count: 2  # 두개의 turtlesim_node에서 구독하는 것을 알 수 있다.
- - ros2 topic echo /turtle1/cmd_vel
+     - Publisher count: 1  # **turtle_teleop_key 하나에서 발행**하는 것을 알 수 있다.
+     - Subscription count: 2  # **두개의 turtlesim_node에서 구독**하는 것을 알 수 있다.
+ - **ros2 topic echo /turtle1/cmd_vel**
      - **/turtle1/cmd_vel 토픽으로 전송되는 실제 메시지를 실시간으로 출력한다.**
      - linear:
      -   x: 0.0
@@ -122,4 +122,5 @@ ROS2의 토픽에 대해 학습한다.
      -   y: 0.0
      -   z: 2.0
 
-
+ - 두 개의 turtlesim_node가 동일한 /turtle1/cmd_vel토픽을 구독하게 되어 키보드 입력 하나에 두 노드가 모두 반응하게 된다.
+ 
