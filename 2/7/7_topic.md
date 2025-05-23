@@ -94,14 +94,32 @@ ROS2의 토픽에 대해 학습한다.
     - 토픽의 내용 캡쳐
 2. 지금까지 확인한 바를 바탕으로 세 개의 노드 사이에 벌어지고 있는 일에 대해서 정리한다.
 
+<img src="7_4_screen_capture.png" alt="demo image" width="800"/>
+
+ - ros2 run turtlesim turtlesim_node  # ros2 환경을 실행하고 거북이1 생성
+ - ros2 run turtlesim turtlesim_node  # 새 터미널에서 ros2 환경을 실행하고 거북이2 생성
+ - ros2 run turtlesim turtle_teleop_key
+ - ros2 topic list
+     - **현재 활성화된 모든 토픽 목록을 출력**
+     - /parameter_events
+     - /rosout
+     - /turtle1/cmd_vel
+     - /turtle1/color_sensor
+     - /turtle1/pose
+ - ros2 topic info /turtle1/cmd_vel
+     - **지정한 토픽에 대한 정보(Type, Publisher, Subscription count)를 출력**
+     - Type: geometry_msgs/msg/Twist  # 선속도 + 각속도값을 얻을 수 있다.
+     - Publisher count: 1  # turtle_teleop_key 하나에서 발행하는 것을 알 수 있다.
+     - Subscription count: 2  # 두개의 turtlesim_node에서 구독하는 것을 알 수 있다.
+ - ros2 topic echo /turtle1/cmd_vel
+     - **/turtle1/cmd_vel 토픽으로 전송되는 실제 메시지를 실시간으로 출력한다.**
+     - linear:
+     -   x: 0.0
+     -   y: 0.0
+     -   z: 0.0
+     - angular:
+     -   x: 0.0
+     -   y: 0.0
+     -   z: 2.0
 
 
-조사한 내용을 형식 문서로 만들고 저장한 이미지와 함께 게시한다.
-프로젝트 루트의 2/7 디렉토리를 생성한 후, 이 디렉토리 내에 문서 파일의 이름은7_topic.md(마크다운 파일의 경우)으로 저장, 게시한다. 이 디렉토리에 이미지도 함께 게시한다.
-
-
-제약사항
-각자 프로젝트 디렉토리를 생성하고, 디렉토리 아래에 단계 별 디렉토리를 생성한다.
-각 문제의 산출물은 해당 디렉토리에 게시한다.
-실습 환경에서 허용되는 범위 내에서, 이를 동료 학습자 및 평가자가 확인할 수 있는 형태로 공유한다.
-깃허브 리파지토리를 활용해 공유하는 것을 추천하며, 비공개(Private) 리파지토리로 구성하는 경우, 동료 학습자 및 평가자가 이를 확인할 수 있도록 권한을 부여한다.
