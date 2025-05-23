@@ -7,10 +7,10 @@ class TimerNode(Node):
 
         self.counter = 0
 
-        # 2초마다 '2 seconds passed : counter' 출력 및 증가
+        # 2초마다 출력 및 증가
         self.timer_2s = self.create_timer(2.0, self.timer_2s_callback)
 
-        # 3초마다 '3 seconds passed : counter' 출력 및 감소
+        # 3초마다 출력 및 감소
         self.timer_3s = self.create_timer(3.0, self.timer_3s_callback)
 
     def timer_2s_callback(self):
