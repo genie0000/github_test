@@ -1,7 +1,7 @@
 # 수행 목표
 ROS2의 토픽에 대해 학습한다.
 
-# ROS2의 토픽에 대해 학습한다.
+# ROS2의 Topic에 대해 학습한다.
 ## 1. demo_nodes_cpp 패키지의 talker와 listener 노드를 실행한 상태에서 rqt_graph를 실행한다.
  1. 모드를 Nodes only 대신 Nodes/Topics (active)로 바꾸고 그래프를 확인해보자.
  2. 그래프에서 그래프의 연결선의 방향성도 확인해보자.
