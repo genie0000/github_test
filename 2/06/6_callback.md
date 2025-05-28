@@ -36,7 +36,7 @@ ROS2의 타이머와 콜백 사용법을 학습한다.
 - **src 디렉토리 압축 및 이동**
      - cd ~/ros2_ws
      - zip -r src.zip src/
-     - mv src.zip ~/github_test/2/6/
+     - mv src.zip ~/github_test/2/06/
 
 - **워크스페이스 디렉토리 압축 및 이동**
      - zip -r ros2_ws.zip ros2_ws/
