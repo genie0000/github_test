@@ -20,7 +20,7 @@
      - **ros2 topic list -t**
  - **두 노드는 /turtle1/cmd_vel 토픽을 통해 통신하며, 이 토픽의 메시지유형은 geometry_msgs/msg/Twist이다.**
  - **geometry_msgs/msg/Twist**
-     - **Twist는 로봇의 선속도(linear velocity) 와 각속도(angular velocity) 를 표현하기 위해 사용되는 기본 메시지 타입**이다.
+     - **Twist는 로봇의 선속도(linear velocity) 와 각속도(angular velocity) 를 표현하기 위해 사용되는 기본 메시지 타입이다.**
      - linear:
      -   x: 0.0  # 앞으로 나아가는 속도이다. (전진/후진)
      -   y: 0.0  # 옆으로 움직이는 속도 (거북이는 X)
