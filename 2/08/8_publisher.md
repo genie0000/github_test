@@ -3,13 +3,13 @@
 
 ## 1. ROS2의 노드 간에 퍼블리쉬, 서브스크라이브 관계에 대해서 조사한다.
  - **Publisher**
-     - **특정 토픽에 데이터를 발행하는 노드로 센서 데이터나 명령 정보를 주기적으로 발행**한다.
+     - **특정 토픽에 데이터를 발행하는 노드로 센서 데이터나 명령 정보를 주기적으로 발행한다.**
  - **subscriber**
      - Publisher가 **발행한 데이터를 구독하는 노드**이다.
 
 ## 2. 이전 문제에서 turtlesim_node노드와 turtle_teleop_key 노드 간의 통신 구조를 게시와 구독의 개념으로 정리해보자.
  - **turtle_teleop_key**
-     - 키보드의 입력을 받아 **속도 명령을 발행(Publisher)**한다.
+     - 키보드의 입력을 받아 **속도 명령을 발행(Publisher)한다.**
  - **turtlesim_node**
      - turtle_teleop_key의 **속도 명령을 구독(subscriber)**하여 거북이를 움직인다.
  - 통신 구조
@@ -18,7 +18,7 @@
 ## 3. turtlesim_node와 turtle_teleop_key 두 노드 사이의 토픽의 유형을 확인해보자. 이 유형의 통신을 구성하는 개별 값들은 각각 어떤 의미를 지니는가?
  - **토픽 리스트 확인**
      - **ros2 topic list -t**
- - **두 노드는 /turtle1/cmd_vel 토픽을 통해 통신하며, 이 토픽의 메시지유형은 geometry_msgs/msg/Twist**이다.
+ - **두 노드는 /turtle1/cmd_vel 토픽을 통해 통신하며, 이 토픽의 메시지유형은 geometry_msgs/msg/Twist이다.**
  - **geometry_msgs/msg/Twist**
      - **Twist는 로봇의 선속도(linear velocity) 와 각속도(angular velocity) 를 표현하기 위해 사용되는 기본 메시지 타입**이다.
      - linear:
@@ -75,4 +75,4 @@
 - **src 디렉토리 압축 및 이동**
      - cd ~/ros2_ws
      - zip -r src.zip src/
-     - mv src.zip ~/github_test/2/08/
+     - mv src.zip ~/파일경로
