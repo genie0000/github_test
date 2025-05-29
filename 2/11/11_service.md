@@ -90,7 +90,7 @@ ROS2의 서비스에 대해서 알아보고, 서비스 서버와 클라이언트
 ### quit 명령
  - ros2 service call /quit std_srvs/srv/Empty
 ### kill 명령
- - ros2 service call /kill turtlesim/srv/Kill
+ - ros2 service call /kill turtlesim/srv/Kill "{name: 'turtle1'}"
 
 <img src="11_1_screen_capture.png" alt="demo image" width="800"/>
 
