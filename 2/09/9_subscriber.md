@@ -55,7 +55,14 @@
 
 ## 6. 이전 문제에서 작성한 turtlesim이 원을 그리도록 토픽을 게시하는 퍼블리셔와 함께 실행한 상황에서 rqt_graph를 사용해 노드 및 토픽 구조 그래프 이미지를 확인하고, 이미지를 저장한다.
 
+<img src="8_1_screen_capture.png" alt="demo image" width="800"/>
+
+ - /circle_publisher(퍼블리셔 노드)--> /turtle1/cmd_vel(속도 명령 토픽)--> turtlesim_node(거북이 이동)
+ - turtlesim_node--> /turtle1/pose(거북이의 현재 위치/자세를 퍼블리시하는 토픽)--> /turtle_pose_subscriber(서브스크라이버 노드)
 
 ## 7. 조사한 내용을 형식 문서로 만들고 워크 스페이스 디렉토리를 압축해 함께 게시한다.
-
-프로젝트 루트의 2/9 디렉토리를 생성한 후, 이 디렉토리 내에 문서 파일의 이름은 9_subscriber.md(마크다운 파일의 경우)으로 저장, 게시한다. 워크스페이스 디렉토리를 압축한 파일, rqt_graph의 그래프 이미지도 함께 게시한다.
+- **src 디렉토리 압축 및 이동**
+     - cd ~/ros2_ws
+     - zip -r src.zip src/
+     - mv src.zip ~/파일경로
+     
