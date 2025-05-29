@@ -14,10 +14,10 @@
 
 ## 2. turtlesim_node를 실행한 후 토픽의 목록을 출력한다.
 ### 2-1. topic 확인
-     - ros2 topic list
- - ros2 topic list명령어 뒤에 -t를 하면 topic이름 뒤에 데이터 타입을 확인할 수 있다.
+     - **ros2 topic list**
+ - **ros2 topic list명령어 뒤에 -t를 하면 topic이름 뒤에 데이터 타입을 확인할 수 있다.**
      - ros2 topic list -t
- - ros2 topic list명령어 뒤에 -v를 하면 발행되는 topic의 이름과 데이터 타입, 구독하는 topic의 이름과 데이터 타입을 확인할 수 있다.
+ - **ros2 topic list명령어 뒤에 -v를 하면 발행되는 topic의 이름과 데이터 타입, 구독하는 topic의 이름과 데이터 타입을 확인할 수 있다.**
      - ros2 topic list -v
 ### 2-2. topic 목록
  - /parameter_events  # ROS2 시스템 기본 토픽
@@ -28,16 +28,18 @@
 
 ## 3. 출력된 토픽의 목록 중 /turtle1/pose 토픽은 turtlesim의 현재의 상황에 대한 정보를 turtlesim이 퍼블리시하는 토픽이다. 이 토픽에 대해서 조사해보자.
 ### 3-1. /turtle1/pose 토픽의 메시지 유형 확인
- - ros2 topic list -t
+ - **ros2 topic list -t**
      - /turtle1/pose [turtlesim/msg/Pose]
- - ros2 topic type /turtle1/pose 
+ - **ros2 topic type /turtle1/pose** 
      - turtlesim/msg/Pose
- - /turtle1/pose 토픽은 turtlesim 패키지에 정의된 Pose 메시지를 사용한다.
+ - **/turtle1/pose 토픽은 turtlesim 패키지에 정의된 Pose 메시지를 사용한다.**
+
 ### 3-2. ros2 interface show 명령에 대해서 조사한다.
  - 이 명령어는 메시지, 서비스, 액션의 구조를 보여주는 명령어이다.
- - ros2 interface show (메시지 타입)
+ - **ros2 interface show (메시지 타입)**
+
 ### 3-3. ros2 interface show 명령으로 /turtle1/pose 토픽의 메시지 유형의 구성을 확인한다.
- - ros2 interface show turtlesim/msg/Pose
+ - **ros2 interface show turtlesim/msg/Pose**
      - float32 x  # 거북이의 x좌표
      - float32 y  # 거북이의 y좌표
      - float32 theta  # 거북이의 방향 (라디안 단위 각도)
@@ -57,8 +59,8 @@
 
 <img src="8_1_screen_capture.png" alt="demo image" width="800"/>
 
- - /circle_publisher(퍼블리셔 노드)--> /turtle1/cmd_vel(속도 명령 토픽)--> turtlesim_node(거북이 이동)
- - turtlesim_node--> /turtle1/pose(거북이의 현재 위치/자세를 퍼블리시하는 토픽)--> /turtle_pose_subscriber(서브스크라이버 노드)
+ - **/circle_publisher(퍼블리셔 노드)--> /turtle1/cmd_vel(속도 명령 토픽)--> turtlesim_node(거북이 이동)**
+ - **turtlesim_node--> /turtle1/pose(거북이의 현재 위치/자세를 퍼블리시하는 토픽)--> /turtle_pose_subscriber(서브스크라이버 노드)**
 
 ## 7. 조사한 내용을 형식 문서로 만들고 워크 스페이스 디렉토리를 압축해 함께 게시한다.
 - **src 디렉토리 압축 및 이동**

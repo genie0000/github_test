@@ -22,11 +22,11 @@
 
 <img src="10_1_screen_capture.png" alt="demo image" width="800"/>
 
- - rqt_graph에 아무것도 출력안되는 문제 발생
+ - **rqt_graph에 아무것도 출력안되는 문제 발생**
 
  <img src="10_2_screen_capture.png" alt="demo image" width="800"/>
 
- - source ~/ros2_ws/install/setup.bash를 거북이가 실행되는 창에도 실행해줘야 노드가 연결된다.
+ - **source ~/ros2_ws/install/setup.bash를 거북이가 실행되는 창에도 실행해줘야 노드가 연결된다.**
  - 빌드 후 환경설정 필수
 
 ## 4. 워크 스페이스 디렉토리를 압축해 함께 게시한다.
