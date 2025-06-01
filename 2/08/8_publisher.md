@@ -78,3 +78,5 @@
      - cd ~/ros2_ws
      - zip -r src.zip src/
      - mv src.zip ~/파일경로
+- **파이썬 파일 복붙**
+     - cp (이동할 파일 경로/파일.py) (파일을 이동시킬 위치 경로)
