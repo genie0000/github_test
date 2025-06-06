@@ -1,6 +1,7 @@
 # 수행목표
 ROS2의 Launch File에 대해서 학습하고, Launch File을 작성해 제어 노드를 실행
 
+# Launch File에 대해 학습한다.
 ## 1. ROS2의 Launch File에 대해서 학습한다.
 ### 1-1. Launch File
  - **Launch File은 ROS 2에서 여러 노드들을 한꺼번에 실행하거나, 실행 시 설정(파라미터, 네임스페이스 등)을 적용하고 싶을 때 사용한다.**
@@ -40,7 +41,7 @@ def generate_launch_description():
  - **data_files에는 launch 파일 경로를 추가해서 설치될 수 있도록 해줘야 한다.**
      - **('share/' + package_name + '/launch', glob('launch/*.py')),**
 
-## 2. ros2 launch 명령어 사용법에 대해서 알아본다.
+## 2. ros2 launch 명령어 사용법에 대해서 학습한다.
 ### 2-1. ros2 launch 명령어
  - **ros2 launch [패키지이름] [런치파일이름]**
  - 사용되는 옵션
