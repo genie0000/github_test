@@ -86,6 +86,7 @@ ROS2의 서비스에 대해서 알아보고, 서비스 서버와 클라이언트
  - **즉, quit은 거북이를 종료하는 명령이고, 이 명령이 오면 프로그램은 내부에서 kill을 호출해서 거북이를 없애고, 제어도 멈춘다.**
 
 ## 7. 구현한 프로그램을 실행한 후 터미널에서 /quit 서비스를 호출하고, 그 결과를 확인한다.
+- python3 ros2_ws/src/my_robot_controller/my_robot_controller/10_turtle_move_control.py
 - 이전에 만들었던 코드에서는 ros2 service call /quit std_srvs/srv/Empty를 터미널에 입력해도 아무런 반응이없었지만 코드를 변경한 이후에는 해당 명령어로 거북이를 제거하는 것이 가능해졌다.
 ### quit 명령
  - ros2 service call /quit std_srvs/srv/Empty
