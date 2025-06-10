@@ -76,37 +76,7 @@ TF(Transform Frames)에 대해서 알아본다.
 RobotModel을 비활성화했기 때문에 로봇의 시각적인 모델은 보이지 않고, 대신 base_link라는 이름의 좌표계가 어디에 있고 어떤 방향을 향하고 있는지를 이 3D 축을 통해 시각적으로 확인할 수 있다.  
 
 ### 4-5. RViz2의 Joint State Publisher를 사용해 튜토리얼 로봇의 각 조인트의 상태를 변화시켜보자.
-RViz2에서 Joint State Publisher 또는 Joint State Publisher GUI를 사용하여 튜토리얼 로봇의 각 조인트 상태를 변화시키는 방법은 다음과 같다. 이 기능을 사용하려면 먼저 로봇 모델이 RViz2에 제대로 로드되어 있어야 한다. (즉, RobotModel 디스플레이가 활성화되어 있어야 합니다).
-
-**전제 조건**: URDF 튜토리얼 로봇 (예: urdf_tutorial 패키지의 r2d2.urdf 또는 유사한 로봇)이 robot_state_publisher 노드에 의해 /joint_states 토픽으로 조인트 상태가 발행되고 있어야 한다.
-
-**1. joint_state_publisher_gui 노드 실행**
- - 새로운 터미널을 열고 다음 명령어를 실행하여 joint_state_publisher_gui 노드를 실행한다. 이 노드는 GUI 슬라이더를 통해 조인트 값을 변경하고 /joint_states 토픽으로 발행한다.
- - ros2 run joint_state_publisher_gui joint_state_publisher_gui
-(만약 이 명령어가 작동하지 않으면, sudo apt install ros-humble-joint-state-publisher-gui로 설치해야 할 수 있습니다.)
-
-**2. RViz2 실행**
- - 다른 터미널을 열고 RViz2를 실행합니다.
-rviz2
-
-**3. RViz2에 RobotModel 디스플레이 추가 및 설정**
-
- - RViz2 좌측 패널의 "Displays" 섹션에서 "Add" 버튼을 클릭합니다.
- - "rviz_default_plugins/RobotModel"을 선택하고 "OK"를 클릭합니다.
- - "RobotModel" 디스플레이의 속성에서 "Description Topic"이 로봇 모델이 로드된 토픽(예: /robot_description)으로 설정되어 있는지 확인합니다.
- - "TF Prefix"가 비어 있는지 확인합니다 (일반적으로 기본값).
- - "Transforms" 섹션에서 "Update Topic"이 /joint_states로 설정되어 있는지 확인합니다. 이 토픽은 joint_state_publisher_gui가 발행하는 조인트 상태를 수신합니다.
-
-**4. joint_state_publisher_gui 창에서 조인트 상태 변경**
- - joint_state_publisher_gui가 실행되면, 작은 창이 나타나고 로봇의 각 조인트 이름과 함께 슬라이더가 표시됩니다.
-
- - 각 슬라이더를 마우스로 드래그하거나 값을 직접 입력하여 조인트 각도 또는 위치를 변경합니다.
- - RViz2 뷰에서 로봇 모델의 해당 조인트가 슬라이더 값에 따라 실시간으로 움직이는 것을 확인할 수 있습니다. 예를 들어, 로봇 팔의 어깨 조인트 슬라이더를 움직이면 로봇 팔이 회전하는 것을 볼 수 있습니다.
-주의사항:
-
-로봇 모델의 URDF/XACRO 파일이 제대로 로드되어야 합니다. 그렇지 않으면 RobotModel 디스플레이가 오류를 표시하거나 아무것도 나타나지 않을 수 있습니다.
-robot_state_publisher 노드가 실행 중이어야 합니다. 이 노드는 /joint_states 토픽에서 수신한 조인트 상태를 기반으로 로봇의 모든 링크에 대한 TF 변환을 계산하여 발행합니다. joint_state_publisher_gui는 /joint_states를 발행하고, robot_state_publisher는 이를 구독하여 TF를 생성합니다.
-이 과정을 통해 joint_state_publisher_gui를 사용하여 로봇의 조인트 상태를 조작하고, RViz2에서 그 결과를 실시간으로 시각화할 수 있습니다. 이는 로봇의 운동학적 동작을 이해하고 디버깅하는 데 매우 유용합니다.
-
+ - Joint State Publisher에서 각 바퀴의 조인트 상태를 변경하면서 X, Y, Z축이 어떻게 변하는지 확인할 수 있다.
+ - Joint State Publisher에서 그리퍼의 조인트 상태를 변경하면서 X, Y, Z축이 어떻게 변하는지 확인할 수 있다.
 
 
