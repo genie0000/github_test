@@ -58,11 +58,14 @@
 
 ## 5. 이전 문제의 ros2 launch urdf_tutorial display.launch.py model:=/path/to/modelfile 명령으로 생성한 URDF 및 xacro 파일을 확인할 수 있다. RViz2에서 두 개의 로봇 모델을 확인한다.
 
-
+<img src="01_1_screen_capture.png" alt="demo image" width="800"/>
 
  - ros2 launch urdf_tutorial display.launch.py model:=/home/genie/ros2_ws/src/my_robot_controller/my_robot_controller/urdf/simple_wheel_robot.urdf
 
  - ros2 launch urdf_tutorial display.launch.py model:=/home/genie/ros2_ws/src/my_robot_controller/my_robot_controller/urdf/simple_wheel_robot.xacro
 
 ## 6. 조사한 내용을 형식 문서로 만들고 워크 스페이스 디렉토리를 압축해 함께 게시한다.
-프로젝트 루트의 3/2 디렉토리를 생성한 후, 이 디렉토리 내에 문서 파일의 이름은 2_urdf_xacro.md(마크다운 파일의 경우)으로 저장, 게시한다. 모델 파일도 함께 게시한다.
+ - **워크 스페이스 디렉토리 압축 및 이동**
+     - cd ~/ros2_ws
+     - zip -r ros2_ws.zip .
+     - mv ros2_ws.zip ~/파일경로/
