@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<robot name="simple_two_wheel_robot">
+
+  <!-- Base Link -->
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <box size="0.4 0.3 0.1"/>
+      </geometry>
+      <origin xyz="0 0 0.05"/>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.4 0.3 0.1"/>
+      </geometry>
+      <origin xyz="0 0 0.05"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.1" ixy="0.0" ixz="0.0"
+               iyy="0.1" iyz="0.0"
+               izz="0.1"/>
+    </inertial>
+  </link>
+
+
+  <!-- front_caster_wheel -->
+<link name="caster_wheel">
+  <visual>
+    <geometry>
+      <sphere radius="0.03"/>
+    </geometry>
+    <origin xyz="-0.2 0 0"/>
+    <material name="gray"/>
+  </visual>
+  <collision>
+    <geometry>
+      <sphere radius="0.03"/>
+    </geometry>
+    <origin xyz="-0.2 0 0"/>
+  </collision>
+  <inertial>
+    <mass value="0.05"/>
+    <inertia ixx="0.0001" ixy="0.0" ixz="0.0"
+             iyy="0.0001" iyz="0.0" izz="0.0001"/>
+  </inertial>
+</link>
+
+<joint name="caster_wheel_joint" type="fixed">
+  <parent link="base_link"/>
+  <child link="caster_wheel"/>
+  <origin xyz="0.15 0 0"/>
+</joint>
+
+
+
+  <!-- Left Wheel -->
+  <link name="left_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.02"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.02"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+               iyy="0.01" iyz="0.0"
+               izz="0.01"/>
+    </inertial>
+  </link>
+
+  <!-- Right Wheel -->
+  <link name="right_wheel">
+    <visual>
+      <geometry>
+        <cylinder radius="0.05" length="0.02"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+      <material name="black"/>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.05" length="0.02"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="1.5708 0 0"/>
+    </collision>
+    <inertial>
+      <mass value="1.0"/>
+      <inertia ixx="0.01" ixy="0.0" ixz="0.0"
+               iyy="0.01" iyz="0.0"
+               izz="0.01"/>
+    </inertial>
+  </link>
+
+  <!-- Left Wheel Joint -->
+  <joint name="left_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="left_wheel"/>
+    <origin xyz="0.15 0.15 0.01"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="1.0" velocity="10.0"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <!-- Right Wheel Joint -->
+  <joint name="right_wheel_joint" type="continuous">
+    <parent link="base_link"/>
+    <child link="right_wheel"/>
+    <origin xyz="0.15 -0.15 0.01"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="20.0" velocity="30.0"/>
+    <dynamics damping="0.1" friction="0.1"/>
+  </joint>
+
+  <!-- Gazebo plugin -->
+  <gazebo>
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace>/</namespace>
+      </ros>
+      <left_joint>left_wheel_joint</left_joint>
+      <right_joint>right_wheel_joint</right_joint>
+      <wheel_separation>0.3</wheel_separation>
+      <wheel_diameter>0.1</wheel_diameter>
+      <robot_base_frame>base_link</robot_base_frame>
+      <update_rate>50.0</update_rate>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <odometry_frame>odom</odometry_frame>
+      <cmd_vel_topic>cmd_vel</cmd_vel_topic>
+      <odometry_topic>odom</odometry_topic>
+    </plugin>
+  </gazebo>
+
+  <!--ros2_control 관련 태그 추가-->
+<ros2_control name="MyRobotSystem" type="system">
+  <hardware>
+    <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+  </hardware>
+  <joint name="left_wheel_joint">
+    <command_interface name="velocity"/>
+    <state_interface name="velocity"/>
+    <state_interface name="position"/>
+  </joint>
+  <joint name="right_wheel_joint">
+    <command_interface name="velocity"/>
+    <state_interface name="velocity"/>
+    <state_interface name="position"/>
+  </joint>
+</ros2_control>
+
+  <!--Gazebo 색상 지정-->
+<gazebo reference="base_link">
+  <material>Gazebo/Red</material>
+</gazebo>
+
+<gazebo reference="left_wheel">
+  <material>Gazebo/Yellow</material>
+</gazebo>
+
+<gazebo reference="right_wheel">
+  <material>Gazebo/Blue</material>
+</gazebo>
+
+<gazebo reference="caster_wheel">
+  <material>Gazebo/Cyan</material>
+</gazebo>
+
+</robot>

@@ -32,9 +32,32 @@
 1. 이 파이썬 프로그램은 /joint_states 토픽에 상태를 게시한다.
 2. robot_state_publisher 노드와 함께 실행해 RViz2에서 로봇의 모델을 확인할 수 있어야 한다.
 
+ - /joint_states 토픽에 조인트 상태를 게시하는 파이썬 노드 구현
+ - 이전에 만든 URDF 사용
+ - robot_state_publisher와 03_joint_state_publisher.py 노드, RViz2를 함께 실행
+ - 메시지 타입은 sensor_msgs.msg.JointState 이다.
+
 ## 4. Launch File을 작성한다. 실행하면 작성한 모델 파일 및 노드를 사용해 RViz2에서 로봇 모델을 확인할 수 있어야 한다.
 1. setup.py, package.xml 파일도 필요한 경우 작성하거나 수정한다.
 2. Launch File에는 RViz 설정 파일과 관련된 사항을 추가한다.
+
+ - 런치파일 실행
+    - source install/setup.bash
+    - ros2 launch my_robot_controller3 publish_state_launch.py 
+
+ - 오류 발생 
+     - base_link  
+     No transform from [base_link] to [map]      
+     left_wheel  
+     No transform from [left_wheel] to [map]    
+     right_wheel  
+     No transform from [right_wheel] to [map]  
+- map 프레임과 base_link 프레임 사이에 TF가 없음
+- 로봇 상태 퍼블리셔(robot_state_publisher)는 base_link부터 로봇 링크들의 TF를 게시한다.
+- 하지만 map 프레임과 로봇 프레임(base_link) 사이를 연결하는 TF는 별도의 노드에서 발행해야 한다. (예: amcl 노드, slam_toolbox 노드, 또는 static_transform_publisher)
+
+ - 임시로 고정 TF 연결 추가
+    - ros2 run tf2_ros static_transform_publisher 0 0 0 0 0 0 map base_link
 
 ## 5. 실행해서 결과를 확인한다.
 1. RViz2에서 RViz 설정 파일을 저장한다.

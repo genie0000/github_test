@@ -31,14 +31,14 @@
      - 반복되는 구조 정의: 동일한 링크, 조인트 구조를 반복적으로 사용하는 경우 유용하다.(예: 다관절 로봇의 팔, 다리)
      - 매개변수화: 링크 길이, 질량, 색상 등을 매개변수로 정의하고 쉽게 변경이 가능하다.
      - 조건문 및 반복문 사용: if, unless, for 같은 논리 구조 사용이 가능하다.(일반 URDF에서는 불가능)
-     - 모듈화: 여러 파일로 나누어 작성하고 조립이 가능하다. (<xacro:include>)
+     - 모듈화: 여러 파일로 나누어 작성하고 조립이 가능하다. (`<xacro:include>`)
 
 ### 3-2. xacro 파일의 구조
  - .xacro 파일은 URDF와 비슷한 XML 문법을 사용하지만, xacro만의 확장 문법을 포함한다.
      - 헤더: XML 선언과 네임스페이스 선언
-     - 매크로 정의 (<xacro:macro>)
-     - 매크로 사용 (<xacro:wheel> 형태)
-     - 변수 정의 (<xacro:property>)
+     - 매크로 정의 (`<xacro:macro>`)
+     - 매크로 사용 (`<xacro:wheel>` 형태)
+     - 변수 정의 (`<xacro:property>`)
      - 조건문, 반복문 사용
      - 외부 파일 포함
 
@@ -60,12 +60,6 @@
 
 <img src="01_1_screen_capture.png" alt="demo image" width="800"/>
 
- - ros2 launch urdf_tutorial display.launch.py model:=/home/genie/ros2_ws/src/my_robot_controller/my_robot_controller/urdf/simple_wheel_robot.urdf
+ - ros2 launch urdf_tutorial display.launch.py model:=/home/genie/ros2_ws3/src/my_robot_controller3/urdf/simple_wheel_robot.urdf
 
- - ros2 launch urdf_tutorial display.launch.py model:=/home/genie/ros2_ws/src/my_robot_controller/my_robot_controller/urdf/simple_wheel_robot.xacro
-
-## 6. 조사한 내용을 형식 문서로 만들고 워크 스페이스 디렉토리를 압축해 함께 게시한다.
- - **워크 스페이스 디렉토리 압축 및 이동**
-     - cd ~/ros2_ws
-     - zip -r ros2_ws.zip .
-     - mv ros2_ws.zip ~/파일경로/
+ - ros2 launch urdf_tutorial display.launch.py model:=/home/genie/ros2_ws3/src/my_robot_controller3/urdf/simple_wheel_robot.xacro
