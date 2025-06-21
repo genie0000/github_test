@@ -14,7 +14,7 @@
 
 ## 2. turtlesim_node를 실행한 후 토픽의 목록을 출력한다.
 ### 2-1. topic 확인
-     - **ros2 topic list**
+     - ros2 topic list
  - **ros2 topic list명령어 뒤에 -t를 하면 topic이름 뒤에 데이터 타입을 확인할 수 있다.**
      - ros2 topic list -t
  - **ros2 topic list명령어 뒤에 -v를 하면 발행되는 topic의 이름과 데이터 타입, 구독하는 topic의 이름과 데이터 타입을 확인할 수 있다.**
